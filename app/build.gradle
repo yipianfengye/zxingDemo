@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    buildToolsVersion '23.0.1'
 
     defaultConfig {
         applicationId "com.mingzebj.bmpcn.qr"
@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile files('libs/zxing.jar')
     compile files('libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar')

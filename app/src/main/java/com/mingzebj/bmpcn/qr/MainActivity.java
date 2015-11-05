@@ -34,11 +34,10 @@ import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import com.mingzebj.bmpcn.qr.activity.CaptureActivity;
-import com.mingzebj.bmpcn.qr.decode.DecodeThread;
 import com.mingzebj.bmpcn.qr.utils.Config;
 import com.mingzebj.bmpcn.qr.utils.ServiceUtils;
 import com.mingzebj.bmpcn.qr.utils.TextWatcherAdapter;
+import com.mingzebj.bmpcn.qr.zxing.activity.CaptureActivity;
 
 /**
  * 主界面
@@ -133,7 +132,9 @@ public class MainActivity extends BaseActivity {
                 showResult.setText("");
                 inputEdit.setText("");
                 showCode.setText("");
-                MainActivity.this.startActivityForResult(new Intent(mContext, CodeActivity.class), REQUEST_CODE);
+                //打开扫描界面扫描条形码或二维码
+                Intent openCameraIntent = new Intent(mContext, CaptureActivity.class);
+                startActivityForResult(openCameraIntent, REQUEST_CODE);
             }
         });
     }
@@ -162,11 +163,13 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE) {
+            //处理扫描结果（在界面上显示）
             if (null != data) {
-                if (!data.hasExtra("result")) {
+                Bundle bundle = data.getExtras();
+                if (bundle == null) {
                     return;
                 }
-                String result = data.getStringExtra("result");
+                String result = bundle.getString("result");
                 if (!TextUtils.isEmpty(result) && result.length() > 13) {
                     final String endResult = result.substring(result.length() - 13, result.length());
                     if (endResult.matches("\\d{13}")) {
@@ -182,6 +185,8 @@ public class MainActivity extends BaseActivity {
                     } else {
                         showDialog(result);
                     }
+                } else {
+                    showDialog(result);
                 }
             }
         }

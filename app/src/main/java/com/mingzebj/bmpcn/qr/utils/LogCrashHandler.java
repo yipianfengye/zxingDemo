@@ -83,6 +83,7 @@ public class LogCrashHandler implements UncaughtExceptionHandler {
         new Thread() {
             public void run() {
                 Looper.prepare();
+                Log.e("tab", ex.getMessage());
                 // Toast.makeText(mContext, "很抱歉,程序出现异常,即将退出", Toast.LENGTH_SHORT).show();
                 NotificationUtil.showNotification(mContext, ex.getMessage());
                 System.exit(0);

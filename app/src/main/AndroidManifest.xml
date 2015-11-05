@@ -47,12 +47,13 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
         <activity
-            android:name=".activity.CaptureActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".CodeActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:name=".zxing.activity.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:label="扫描二维码"
-            android:screenOrientation="portrait"></activity>
+            ></activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
