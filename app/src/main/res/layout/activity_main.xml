@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="uuzuche.com.zxingdemo.MainActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/input_rela"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            >
+            <EditText
+                android:id="@+id/input_edit"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:hint="请输入防伪码"
+                android:layout_centerVertical="true"
+                android:background="@drawable/input_bg"
+                android:paddingLeft="5dp"
+                />
+
+            <ImageView
+                android:id="@+id/input_image"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/search"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/show_rela"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_rela"
+            android:background="#ffefc7"
+            android:layout_marginTop="18dp"
+            >
+
+            <TextView
+                android:id="@+id/show_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="防伪码"
+                android:layout_marginTop="18dp"
+                />
+
+            <TextView
+                android:id="@+id/show_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/show_title"
+                android:textColor="#226caf"
+                android:textSize="22sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                />
+
+            <TextView
+                android:id="@+id/show_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#226caf"
+                android:layout_below="@+id/show_code"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="18dp"
+                />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_code"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="扫码"
+            android:background="#007cc7"
+            android:layout_below="@+id/show_rela"
+            android:layout_marginTop="18dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/button_code"
+            >
+            <ImageView
+                android:id="@+id/image_buttom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pingheng"
+                android:layout_alignParentBottom="true"
+                android:scaleType="centerInside"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

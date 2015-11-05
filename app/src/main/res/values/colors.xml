@@ -1,0 +1,15 @@
+<resources>
+    <!-- 颜色设计规范 -->
+    <color name="c1">#59a9ff</color>
+    <color name="c2">#479bfc</color>
+    <color name="c3">#434a54</color>
+    <color name="c4">#989fa5</color>
+    <color name="c5">#c8ccd1</color>
+    <color name="c6">#e2e4e6</color>
+    <color name="c7">#0fc37b</color>
+    <color name="c8">#ff7300</color>
+    <color name="c9">#ff5b63</color>
+    <color name="c10">#f1f0f8</color>
+    <color name="c11">#ffffff</color>
+    <color name="cxx">#b0d5ff</color>
+</resources>
