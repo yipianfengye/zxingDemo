@@ -170,21 +170,17 @@ public class MainActivity extends BaseActivity {
                     return;
                 }
                 String result = bundle.getString("result");
-                if (!TextUtils.isEmpty(result) && result.length() > 13) {
-                    final String endResult = result.substring(result.length() - 13, result.length());
-                    if (endResult.matches("\\d{13}")) {
-                        showCode.setText(endResult);
+                if (!TextUtils.isEmpty(result) && result.length() > 16) {
+                    final String endResult = result.substring(result.length() - 16, result.length());
+                    showCode.setText(endResult);
 
-                        showProgress(false);
-                        new Thread() {
-                            @Override
-                            public void run() {
-                                requestCode(endResult);
-                            }
-                        }.start();
-                    } else {
-                        showDialog(result);
-                    }
+                    showProgress(false);
+                    new Thread() {
+                        @Override
+                        public void run() {
+                            requestCode(endResult);
+                        }
+                    }.start();
                 } else {
                     showDialog(result);
                 }
