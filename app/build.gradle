@@ -7,9 +7,9 @@ android {
     defaultConfig {
         applicationId "com.mingzebj.bmpcn.qr"
         minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 22
+        versionCode 4
+        versionName "1.4"
     }
     buildTypes {
         release {

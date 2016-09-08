@@ -170,15 +170,17 @@ public class MainActivity extends BaseActivity {
                     return;
                 }
                 String result = bundle.getString("result");
-                if (!TextUtils.isEmpty(result) && result.length() > 16) {
-                    final String endResult = result.substring(result.length() - 16, result.length());
-                    showCode.setText(endResult);
+                if (!TextUtils.isEmpty(result) && result.contains("=")) {
+
+                    final String endResult = result.substring(result.lastIndexOf("=") + 1, result.length());
+                    final String eResult = endResult.trim();
+                    showCode.setText(eResult);
 
                     showProgress(false);
                     new Thread() {
                         @Override
                         public void run() {
-                            requestCode(endResult);
+                            requestCode(eResult);
                         }
                     }.start();
                 } else {
